@@ -25,5 +25,6 @@ package-lock.json
 # Local backup copies; publish only the canonical CV and project demos.
 /CV/Academic_CV1.pdf
 /CV/Academic_CV2.pdf
+/CV/Academic_CV3.pdf
 /assets/videos/clear1.mp4
 /assets/videos/clear2.mp4

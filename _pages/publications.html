@@ -1,36 +1,9 @@
 ---
-layout: archive
-title: "Publications"
+layout: notebook
+title: Publications
 permalink: /publications/
-author_profile: true
+description: Publications and submitted manuscripts by Xiyu Ke in robotics, manipulation, motion planning, and robot design.
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+<header class="page-intro"><h1>Publications & manuscripts</h1></header>
+<section class="publication-section" aria-labelledby="accepted-title"><div class="section-heading"><h2 id="accepted-title">Accepted conference paper</h2></div><div class="publication-list">{% assign accepted = site.data.publications | where: 'group', 'accepted' %}{% for pub in accepted %}{% include publication-entry.html publication=pub %}{% endfor %}</div></section>
+<section class="publication-section" aria-labelledby="submitted-title"><div class="section-heading"><h2 id="submitted-title">Submitted manuscripts</h2></div><p class="section-description">Manuscripts submitted to ICRA 2027 and AAAI 2027.</p><div class="publication-list">{% assign submitted = site.data.publications | where: 'group', 'submitted' %}{% for pub in submitted %}{% include publication-entry.html publication=pub %}{% endfor %}</div></section>

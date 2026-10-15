@@ -1,0 +1,15 @@
+{% assign project = include.project %}
+{% assign video_file = site.static_files | where: 'path', project.video | first %}
+{% assign poster_file = site.static_files | where: 'path', project.poster | first %}
+<figure class="project-media media-{{ project.id }}{% if include.compact %} media-compact{% endif %}">
+  {% if video_file %}
+  <video controls playsinline preload="metadata"{% if poster_file %} poster="{{ project.poster | relative_url }}"{% endif %} aria-label="{{ project.name | escape }} project demonstration" aria-describedby="demo-description-{{ project.id }}">
+    <source src="{{ project.video | relative_url }}" type="video/mp4">
+    Your browser does not support embedded video. <a href="{{ project.video | relative_url }}">Download the {{ project.name }} demo</a>.
+  </video>
+  <figcaption id="demo-description-{{ project.id }}"{% if include.compact %} class="visually-hidden"{% endif %}>{{ project.demo_description }}</figcaption>
+  {% unless include.compact %}<div class="video-download"><a href="{{ project.video | relative_url }}">Download video</a></div>{% endunless %}
+  {% else %}
+  <div class="demo-placeholder">{% if include.compact %}<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="m17 11 6-4v12l-6-4"/></svg><span class="demo-soon">Demo coming soon</span>{% else %}<span class="placeholder-name">{{ project.name }}</span><span class="demo-soon">Video demonstration forthcoming</span>{% endif %}</div>
+  {% endif %}
+</figure>

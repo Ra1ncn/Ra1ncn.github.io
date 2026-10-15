@@ -1,0 +1,5 @@
+<div class="education-list">
+{% for education in site.data.education %}
+  <article class="education-item"><p class="eyebrow">{{ education.period }}</p><h3>{{ education.school }}</h3><p>{{ education.degree }}</p><p class="education-detail">{{ education.location }} · {{ education.result }}</p></article>
+{% endfor %}
+</div>

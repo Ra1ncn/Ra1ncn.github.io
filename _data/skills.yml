@@ -1,0 +1,10 @@
+- category: Programming & tools
+  items: Python, C/C++, MATLAB, Lua, NumPy, SciPy, Linux, Git, LaTeX
+- category: Robotics & control
+  items: ROS, CoppeliaSim (V-REP), motion planning, forward and inverse kinematics, multi-robot trajectory control
+- category: Learning & perception
+  items: PyTorch, OpenCV, RGB-D perception, point-cloud processing, semantic segmentation, AprilTag/ChArUco-based visual localization
+- category: Robotic manipulation
+  items: Grasp pose estimation, hand–eye calibration, active perception, contact-constrained grasp refinement, cross-entropy method (CEM), AnyGrasp, Contact-GraspNet
+- category: Hardware & prototyping
+  items: PCB design, 3D printing, motor-driver integration, SocketCAN; UR5e, AgileX Nero, Piper, Crazyflie, Intel RealSense, NOKOV motion capture

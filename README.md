@@ -1,101 +1,74 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Xiyu Ke — Academic website
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+A personal robotics research website, built with Jekyll and hosted on GitHub Pages. The short homepage contains an introduction with a portrait, three large project demos, a compact publication section, and personal interests. It pairs Comic Sans MS with a warm cream background, muted green accents, and a light/dark theme.
 
-# Getting Started
+## Preview locally
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Edit site-wide configuration in `_config.yml` and double check that the `url` is the one that you just selected in the previous step and that `repository` reflects the correct path for your repository.
-1. Add your site content, upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
-
-See more info at https://academicpages.github.io/
-
-### Additional Tutorials
-
-Additional tutorials for working with the Academic Pages template can be found at the following sites:
-- https://jayrobwilliams.com/posts/2020/06/academic-website/
-
-## Running locally
-
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distributions and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try running `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stopping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-chmod -R 777 .
-docker compose up
+```sh
+bundle install
+bundle exec jekyll serve --host 127.0.0.1 --port 4000
 ```
 
-You should now be able to access the website from `localhost:4000`.
+Open `http://127.0.0.1:4000`. Restart the server after changing `_config.yml`. If upgrading an older checkout gives a Liquid `tainted?` error on a recent Ruby version, run `bundle install` with this updated Gemfile. The Gemfile uses Jekyll 3.10 and Liquid 4.0.4, matching the GitHub Pages versions, with only the plugins this site uses. This avoids unused CommonMark extensions that do not support Ruby 4. CSV, BigDecimal, Logger, and Base64 are explicit dependencies for newer Ruby versions.
 
-### Using the DevContainer in VS Code
+To check the production output:
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+```sh
+bundle exec jekyll build --strict_front_matter
+python3 scripts/check_site.py
+```
 
-# Maintenance
+## Edit the content
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+| Content | Source |
+| --- | --- |
+| Homepage introduction and section order | `_pages/about.md` |
+| Portrait path and alt text | `_data/profile.yml` |
+| Shared project descriptions, contributions, demo paths | `_data/projects.yml` |
+| Publication titles, author order, status | `_data/publications.yml` |
+| Degrees and dates | `_data/education.yml` |
+| Technical skills | `_data/skills.yml` |
+| Email and site URL | `_config.yml` |
+| Navigation | `_data/navigation.yml` |
+| Downloadable CV | `CV/Academic_CV.pdf` |
+| Colors, fonts, responsive layouts | `assets/css/notebook.css` |
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii), and additional maintainers would be welcome.
+The homepage uses each project's short `home_summary`; the research index, project pages, and CV retain the full project data. Each project page lives in `_portfolio/` and selects its data with `project_id`. Manuscript titles deliberately differ from project display titles where the CV uses different wording. Keep submitted manuscripts marked **Submitted** until their status actually changes. Paper/code links should only be added when real public URLs are available. The homepage shows accepted papers and a collapsed “Under review” list for submitted manuscripts. Both groups include the complete author lists in their original order, with Xiyu Ke in bold. Full venue details remain on the publications page and in the CV. There is no separate education section or GitHub link on the homepage.
 
-## Bugfixes and enhancements
+The original sample pages and collections remain in the source tree for reference but are excluded in `_config.yml`, along with sample attachments, scripts, and template demo content. They do not appear in the generated site or feed.
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of the template to your fork as well.
+## Add your portrait
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize, although [rebasing](https://git-scm.com/docs/git-rebase) the changes from this template will work along with manually [cherry picking](https://git-scm.com/docs/git-cherry-pick) the relevant commits. If you are not comfortable with the Git command line, you can save your various `.yml` configuration files and Markdown files, delete the repository, and fork it again. 
+Place your photo at `images/xiyu-ke.jpg`, or change `photo` in `_data/profile.yml` to an existing image path. Rebuild Jekyll after adding the file. The introduction reserves a portrait-shaped space and shows a neutral placeholder until the file exists. Use a photo with some room around your face: the desktop frame crops to a 9:11 aspect ratio. Adjust `.portrait img` in `assets/css/notebook.css` if the crop needs a different position.
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+## Add the three demos
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+Place browser-compatible MP4 videos at:
+
+- `assets/videos/clear.mp4`
+- `assets/videos/organizeit.mp4`
+- `assets/videos/micromvp.mp4`
+
+Rebuild or restart Jekyll after adding new video files. Their presence is detected at build time: an existing file displays a native video player; an absent file displays a neutral placeholder labeled “Demo coming soon” on the homepage. There is no fake play button. The player has controls, inline playback, metadata-only preload, and no autoplay. Homepage media descriptions are available to assistive technology without adding another visible paragraph. Detailed project pages also show a video download link.
+
+Use H.264 MP4 videos with no audio track. Keep clips reasonably short and compressed. A possible conversion command is:
+
+```sh
+ffmpeg -i input.mov -c:v libx264 -crf 24 -preset medium -pix_fmt yuv420p -an -movflags +faststart assets/videos/clear.mp4
+```
+
+For an optional poster, place a JPG/PNG in `images/` and set the project's `poster` field to its root-relative path, such as `/images/clear-poster.jpg`. Only existing poster files are used. Update `demo_description` to describe the supplied clip accurately. If a demo contains essential speech, provide captions when preparing the video.
+
+For an existing H.264/AAC MP4 that stalls before playback, move its playback index to the beginning without re-encoding: `ffmpeg -i input.mp4 -map 0 -c copy -movflags +faststart output.mp4`. Use a separate output file and preserve the original. The local development plugin `_plugins/local_video_ranges.rb` also corrects WEBrick's `If-Range` handling for MP4 seeking; restart `jekyll serve` after adding or changing this plugin. It is not needed on GitHub Pages.
+
+## Design and publishing
+
+The site uses a narrow layout, a warm cream background, deep gray-green text, and muted green accents. The homepage uses Comic Sans MS for the name, headings, biography, project descriptions, and hobby labels. Small metadata and contact links use Inter. When Comic Sans MS is not installed on the visitor's device, the locally served Comic Neue font provides a similar handwriting style. Microsoft font files are not bundled. Inter and Comic Neue are served locally, with their licenses in `assets/fonts/notebook/`; no runtime font requests go to external services. Each demo spans the full content width, with a short heading above it and a brief explanation below. Posters are real frames extracted from the supplied videos (CLEAR at 4 seconds, OrganizeIt at 3 seconds, microMVP at 8 seconds). All three videos have no audio tracks. The portrait has a light frame. Dark mode uses a matching charcoal-green palette. All three demos have been supplied; the personal photo is still a placeholder.
+
+Visitors can switch themes; the preference is saved when browser storage is available. The site follows the system theme by default and honors reduced-motion preferences. Main content and navigation work without JavaScript.
+
+Existing public URLs `/`, `/portfolio/`, `/publications/`, and `/cv/` are preserved. The new project pages are `/research/clear/`, `/research/organizeit/`, and `/research/micromvp/`. The CV is served unchanged at `/CV/Academic_CV.pdf`.
+
+This update does not deploy automatically from the local workspace. Publishing uses the repository's configured GitHub Pages workflow after changes are committed and pushed. The local redesign introduces no server or external application service.
+
+Original theme: Academic Pages / Minimal Mistakes (MIT; see `LICENSE`).

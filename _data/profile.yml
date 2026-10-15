@@ -1,0 +1,4 @@
+# Add your photo at this path, or change the path to an existing JPG/PNG.
+# Rebuild Jekyll after adding the file. Until then, a quiet placeholder is shown.
+photo: /images/xiyu-ke.jpg
+photo_alt: Xiyu Ke

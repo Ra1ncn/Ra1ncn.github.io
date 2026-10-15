@@ -1,0 +1,76 @@
+- id: clear
+  number: "01"
+  name: CLEAR
+  title:  Contact-Aware Localization and Exclusion-Aware Refinement
+  url: /research/clear/
+  period: Jul. 2026 – Present
+  lab: Algorithmic Robotics and Control Lab, Rutgers University
+  role: First author
+  status: Submitted to ICRA 2027
+  tags: [Robotic manipulation, Language grounding, Contact constraints]
+  summary: "A language-guided grasping system that grasps user-specified object parts while avoiding forbidden-contact regions, integrating RGB-D perception and contact-constrained grasp refinement."
+  home_summary: "CLEAR is a language-guided robotic grasping framework that enables robots to grasp specific object parts while avoiding restricted contact regions. I developed the perception and grasp-refinement pipeline, combining point-guided localization with contact-constrained optimization."
+  problem: "A successful lift is not always a successful grasp. A robot also needs to touch the intended part of an object and avoid regions where contact is forbidden. CLEAR connects language-guided part perception with contact-constrained grasp refinement and motion-feasibility checks."
+  contributions:
+    - "Developed and deployed the language-guided grasping system on an AgileX Nero arm with a wrist-mounted Intel RealSense D405."
+    - "Integrated reachable close-up RGB-D acquisition with automatic positive and negative point prompts for SAM3, producing separate target and forbidden-contact maps."
+    - "Implemented multi-start cross-entropy method (CEM) grasp refinement with target-contact scoring, forbidden-region proximity penalties, hard image-space and 3D exclusions, and final contact and motion-feasibility checks."
+    - "Conducted real-robot evaluations across 16 objects and 160 matched trials per method."
+  evidence_title: Real-robot evaluation
+  evidence: "CLEAR with AnyGrasp achieved 86.25% task success versus 68.13% for the strongest evaluated baseline, SAM3 text + AnyGrasp, across 16 objects and 160 matched trials per method. Success required complete-object lifting, designated-region contact, and no forbidden contact."
+  hardware: AgileX Nero · RealSense D405
+  video: /assets/videos/clear.mp4
+  poster: /images/demos/clear-poster.jpg
+  demo_description: "The demo shows grasping of user-specified object parts while avoiding forbidden-contact regions."
+  publication: clear
+
+- id: organizeit
+  number: "02"
+  name: OrganizeIt
+  title: Robotic Execution for Tabletop Organization
+  url: /research/organizeit/
+  period: Jun. 2026 – Aug. 2026
+  lab: ARC Lab, Rutgers University
+  role: Second author
+  status: Submitted to AAAI 2027
+  tags: [Pick-and-place, Real-robot execution, Recovery]
+  summary: "Real-robot grasping and execution for tabletop organization on a UR5e, including thin-object pickup, coordinated arm–gripper motion, and recovery from missed grasps and unexpected contact."
+  home_summary: "OrganizeIt is a robotic system that organizes tabletop objects according to desired arrangements. I developed real-robot grasping and execution modules, focusing on thin-object pickup, coordinated arm–gripper motion, and recovery from failed grasps."
+  problem: "Real tabletop organization has to cope with clutter, thin objects, and imperfect grasps. My work on OrganizeIt focused on the grasping and execution modules that make pick-and-place reliable on a physical robot."
+  contributions:
+    - "Developed the real-robot grasping and execution modules, deploying AnyGrasp-based pick-and-place on a UR5e with wrist-mounted RGB-D sensing."
+    - "Designed coordinated arm–gripper motion to compensate for finger extension during closure, enabling pickup of thin objects lying flush with the table, including smartphones and rulers."
+    - "Implemented object-specific gripper pre-shaping and force-triggered recovery for tipping, unexpected descent contact, and missed grasps, using re-perception and grasp retries."
+    - "Incorporated top-down grasp constraints and buffer-placement clearance; conducted experiments, collected data, and analyzed outcomes across four tabletop domains."
+  evidence_title: Execution and evaluation
+  evidence: "Real-robot experiments covered four tabletop domains. My contributions centered on grasping and execution, including thin-object pickup and recovery from unexpected contact or missed grasps."
+  hardware: UR5e · Wrist-mounted RGB-D sensing
+  video: /assets/videos/organizeit.mp4
+  poster: /images/demos/organizeit-poster.jpg
+  demo_description: "The project demonstrates tabletop pick-and-place, coordinated arm–gripper motion, and real-robot execution for object organization."
+  publication: organizeit
+
+- id: micromvp
+  number: "03"
+  name: microMVP
+  title: Vision-Guided Multi-Vehicle Research Platform
+  url: /research/micromvp/
+  period: Oct. 2025 – Mar. 2026
+  lab: ARC Lab, Rutgers University
+  role: Hardware, localization & control
+  status: Research platform
+  tags: [Multi-robot systems, Visual localization, Prototyping]
+  summary: "A modular multi-vehicle platform integrating custom PCBs, fiducial-marker localization, and Wi-Fi control for coordinated execution of circular, figure-eight, and user-drawn trajectories."
+  home_summary: "microMVP 4.0 is a vision-guided multi-vehicle platform for coordinated trajectory execution. I built the micro-vehicles and integrated visual localization, Wi-Fi control, and multi-vehicle coordination."
+  problem: "A physical multi-vehicle research platform needs hardware, localization, and control to work together. microMVP 4.0 combines modular micro-vehicles with vision-guided trajectory execution for coordinated motion."
+  contributions:
+    - "Designed and built modular micro-vehicles with Seeed Studio XIAO controllers, motor drivers on custom PCBs, and 3D-printed chassis."
+    - "Developed a Wi-Fi client–server control architecture and fiducial-marker-based localization using AprilTag and ChArUco to estimate vehicle position and heading."
+    - "Implemented multi-vehicle trajectory execution for circular, figure-eight, and user-drawn paths."
+    - "Produced system demonstrations combining the control interface with physical fleet motion."
+  evidence_title: Platform capabilities
+  evidence: "The platform supports circular, figure-eight, and user-drawn trajectories. System demonstrations combine the control interface with vision-guided motion of the physical fleet."
+  hardware: Seeed Studio XIAO · Custom PCBs · 3D-printed chassis
+  video: /assets/videos/micromvp.mp4
+  poster: /images/demos/micromvp-poster.jpg
+  demo_description: "The project demonstrates a physical fleet following vision-guided circular, figure-eight, and user-drawn trajectories."

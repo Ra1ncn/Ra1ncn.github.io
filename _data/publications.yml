@@ -1,0 +1,42 @@
+- id: quadrotor
+  title: Time-Optimal Trajectory Planning and Model Predictive Control of Morphing Quadrotors
+  authors: [Qiuyu Wang, Na Zhao, Chaojun Qin, Xiyu Ke, Yudong Luo, Yantao Shen]
+  venue: IEEE International Conference on Robotics and Automation
+  venue_short: ICRA 2026
+  status: Accepted
+  group: accepted
+  year: 2026
+
+- id: clear
+  title: "CLEAR: Contact-Aware Localization and Exclusion-Aware Refinement"
+  authors: [Xiyu Ke, Litao Liu, Pengfei Yi, Yifan Han, Junshan Huang, Sixu Lin, Jingjin Yu]
+  venue: IEEE International Conference on Robotics and Automation
+  venue_short: ICRA 2027
+  status: Submitted
+  group: submitted
+  project_url: /research/clear/
+
+- id: organizeit
+  title: "OrganizeIt: Compiling Generated Images into Tidy Tabletop Arrangements"
+  authors: [Junshan Huang, Xiyu Ke, Jintong Li, Litao Liu, Duo Zhang, Jingjin Yu]
+  venue: AAAI Conference on Artificial Intelligence
+  venue_short: AAAI 2027
+  status: Submitted
+  group: submitted
+  project_url: /research/organizeit/
+
+- id: pushing-clutter
+  title: Pushing Clutter via Attention-Based Multi-Object Interaction Dynamics
+  authors: [Litao Liu, Khushwanth Sri Sai Vudhya, Tanishq Annavaram, Pengfei Yi, Junshan Huang, Yifan Han, Xiyu Ke, Sixu Lin, Jingjin Yu]
+  venue: IEEE International Conference on Robotics and Automation
+  venue_short: ICRA 2027
+  status: Submitted
+  group: submitted
+
+- id: designagent
+  title: "DesignAgent: Efficient and Adaptive Search Framework for Robot Morphology Design"
+  authors: [Litao Liu, Pengfei Yi, Enze Yuan, Zilin Yuan, Haoran Du, Ishaan Myrie, Yifan Han, Wenbo Yu, Xiyu Ke, Jingjin Yu]
+  venue: AAAI Conference on Artificial Intelligence
+  venue_short: AAAI 2027
+  status: Submitted
+  group: submitted

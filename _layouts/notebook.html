@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="{{ '/assets/js/notebook-theme.js' | relative_url }}"></script>
+  {% assign description = page.description | default: site.description %}
+  <title>{% unless page.url == '/' %}{{ page.title | escape }} · {% endunless %}Xiyu Ke · Robotics Research</title>
+  <meta name="description" content="{{ description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }} · Xiyu Ke">
+  <meta property="og:description" content="{{ description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/academic-social.png' | absolute_url }}">
+  <meta property="og:image:alt" content="Xiyu Ke — Robotics Research, Rutgers University">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#202721" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="{{ '/images/academic-mark.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}">
+  <script src="{{ '/assets/js/notebook.js' | relative_url }}" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Xiyu Ke","url":{{ '/' | absolute_url | jsonify }}}</script>
+</head>
+<body{% if page.home %} class="home-page"{% endif %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap{% if page.home %} home-header{% endif %}">
+    {% unless page.home %}
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Xiyu Ke home">Xiyu Ke</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      {% for link in site.data.navigation.main %}
+      {% assign active = false %}
+      {% if page.url == link.url %}{% assign active = true %}{% endif %}
+      {% if link.url == '/portfolio/' and page.project_id %}{% assign active = true %}{% endif %}
+      <a href="{{ link.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+    {% endunless %}
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" hidden><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20.5 13.3A8.7 8.7 0 0 1 10.7 3.5 8.7 8.7 0 1 0 20.5 13.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer wrap">
+    <p>© {{ site.time | date: '%Y' }} Xiyu Ke</p>
+    <a href="#main">Back to top ↑</a>
+  </footer>
+</body>
+</html>

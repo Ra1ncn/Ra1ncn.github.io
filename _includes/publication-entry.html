@@ -1,0 +1,10 @@
+{% assign pub = include.publication %}
+<article class="publication"{% unless include.compact %} id="{{ pub.id }}"{% endunless %}>
+  <div class="publication-marker"><span class="status-badge status-{{ pub.group }}">{{ pub.status }}</span><span>{{ pub.venue_short }}</span></div>
+  <div class="publication-body">
+    <h3>{{ pub.title }}</h3>
+    <p class="authors">{% for author in pub.authors %}{% if author == 'Xiyu Ke' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    {% unless include.compact %}<p class="publication-venue">{% if pub.group == 'submitted' %}Manuscript submitted to {% endif %}{{ pub.venue }} ({{ pub.venue_short }}).</p>{% endunless %}
+    {% if pub.project_url %}<a class="text-link publication-link" href="{{ pub.project_url | relative_url }}">Project notes <span aria-hidden="true">↗</span></a>{% endif %}
+  </div>
+</article>

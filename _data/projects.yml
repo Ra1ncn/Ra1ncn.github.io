@@ -20,7 +20,7 @@
   evidence: "CLEAR with AnyGrasp achieved 86.25% task success versus 68.13% for the strongest evaluated baseline, SAM3 text + AnyGrasp, across 16 objects and 160 matched trials per method. Success required complete-object lifting, designated-region contact, and no forbidden contact."
   hardware: AgileX Nero · RealSense D405
   video: /assets/videos/clear.mp4
-  poster: /images/demos/clear-poster.jpg
+  poster: /images/demos/clear-grasp-poster.jpg
   demo_description: "The demo shows grasping of user-specified object parts while avoiding forbidden-contact regions."
   publication: clear
 

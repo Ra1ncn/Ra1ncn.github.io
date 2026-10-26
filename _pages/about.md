@@ -13,7 +13,7 @@ redirect_from:
   <div class="home-bio">
     <p>I'm an M.S. student in <strong>Electrical and Computer Engineering</strong> at <strong>Rutgers University</strong>. I received my B.S. in Intelligent Science and Technology from Dalian Maritime University.</p>
     <p>My research focuses on <strong>robotic manipulation and robot learning</strong>. I'm particularly interested in world models for predicting action outcomes and enabling more generalizable robotic planning and manipulation.</p>
-    <div class="intro-links"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><a href="{{ '/CV/Academic_CV.pdf' | relative_url }}?v={{ site.time | date: '%s' }}">CV <span class="file-type">[PDF]</span></a></div>
+    <div class="intro-links"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><a href="{{ '/CV/Xiyu_Ke_CV.pdf' | relative_url }}?v={{ site.time | date: '%s' }}">CV <span class="file-type">[PDF]</span></a></div>
   </div>
   {% assign portrait = site.static_files | where: 'path', site.data.profile.photo | first %}
   <div class="portrait">

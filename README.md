@@ -30,12 +30,20 @@ python3 scripts/check_site.py
 | Technical skills | `_data/skills.yml` |
 | Email and site URL | `_config.yml` |
 | Navigation | `_data/navigation.yml` |
-| Downloadable CV | `CV/Academic_CV.pdf` |
+| Downloadable CV | `CV/Xiyu_Ke_CV.pdf` |
 | Colors, fonts, responsive layouts | `assets/css/notebook.css` |
 
 The homepage uses each project's short `home_summary`; the research index, project pages, and CV retain the full project data. Each project page lives in `_portfolio/` and selects its data with `project_id`. Manuscript titles deliberately differ from project display titles where the CV uses different wording. Keep submitted manuscripts marked **Submitted** until their status actually changes. Paper/code links should only be added when real public URLs are available. The homepage shows accepted papers and a collapsed “Under review” list for submitted manuscripts. Both groups include the complete author lists in their original order, with Xiyu Ke in bold. Full venue details remain on the publications page and in the CV. There is no separate education section or GitHub link on the homepage.
 
 The original sample pages and collections remain in the source tree for reference but are excluded in `_config.yml`, along with sample attachments, scripts, and template demo content. They do not appear in the generated site or feed.
+
+## Update your CV
+
+Replace `CV/Xiyu_Ke_CV.pdf` with your latest PDF, keeping the same filename. The homepage, navigation, and CV download button all use this path. These links include a build timestamp so visitors receive the updated PDF after publishing.
+
+The text on `/cv/` is maintained separately: edit `_pages/cv.md` and the relevant files in `_data/` when you want the web version to match the PDF. Replacing the PDF does not update that page's text automatically.
+
+Preview and check the site with the commands above, then commit and push the changes to publish through the configured GitHub Pages workflow.
 
 ## Add your portrait
 
@@ -67,7 +75,7 @@ The site uses a narrow layout, a warm cream background, deep gray-green text, an
 
 Visitors can switch themes; the preference is saved when browser storage is available. The site follows the system theme by default and honors reduced-motion preferences. Main content and navigation work without JavaScript.
 
-Existing public URLs `/`, `/portfolio/`, `/publications/`, and `/cv/` are preserved. The new project pages are `/research/clear/`, `/research/organizeit/`, and `/research/micromvp/`. The CV is served unchanged at `/CV/Academic_CV.pdf`.
+Existing public URLs `/`, `/portfolio/`, `/publications/`, and `/cv/` are preserved. The new project pages are `/research/clear/`, `/research/organizeit/`, and `/research/micromvp/`. The downloadable CV is served at `/CV/Xiyu_Ke_CV.pdf`.
 
 This update does not deploy automatically from the local workspace. Publishing uses the repository's configured GitHub Pages workflow after changes are committed and pushed. The local redesign introduces no server or external application service.
 

@@ -83,8 +83,8 @@ if homepage.count('class="home-paper"') != 1 or 'class="home-under-review"' not 
 for file in list(pages) + [root / "feed.xml", root / "sitemap.xml"]:
     if file.is_file() and re.search(r"GitHub University|paper-title-number|blog-post-[1-4]|portfolio-[12]|ready-to-fork", file.read_text()):
         errors.append(f"{file.relative_to(root)} contains template demo content")
-source_cv = Path("CV/Academic_CV.pdf")
-if source_cv.read_bytes() != (root / "CV/Academic_CV.pdf").read_bytes():
+source_cv = Path("CV/Xiyu_Ke_CV.pdf")
+if source_cv.read_bytes() != (root / "CV/Xiyu_Ke_CV.pdf").read_bytes():
     errors.append("Published CV differs from the original")
 
 if errors:

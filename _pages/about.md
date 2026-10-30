@@ -47,7 +47,6 @@ redirect_from:
   <h2 id="hobbies-title">Beyond research</h2>
   <ul class="hobby-list">
     <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 16h10M4 13v6m24-6v6"/><rect x="7" y="9" width="4" height="14" rx="1"/><rect x="21" y="9" width="4" height="14" rx="1"/></svg><span>Fitness</span></li>
-    <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 5-5 3-3 10 5 2 3-7v14h10V13l3 7 5-2-3-10-5-3M11 5l8 13M21 5 11 22M10 22h12m-5 0 4 6m-4-6-3 7"/></svg><span>Brazilian jiu-jitsu</span></li>
     <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 26 10-18 10 18H2Zm17-5 4-8 7 13h-8M9 14l3 3 3-3"/><circle cx="24" cy="7" r="2.5"/></svg><span>The outdoors</span></li>
   </ul>
 </section>

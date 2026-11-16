@@ -12,7 +12,7 @@ redirect_from:
   <h1 id="intro-title">Xiyu Ke</h1>
   <div class="home-bio">
     <p>I'm an M.S. student in <strong>Electrical and Computer Engineering</strong> at <strong>Rutgers University</strong>. I received my B.S. in Intelligent Science and Technology from Dalian Maritime University.</p>
-    <p>My research focuses on <strong>robotic manipulation and robot learning</strong>. I'm particularly interested in world models for predicting action outcomes and enabling more generalizable robotic planning and manipulation.</p>
+    <p>My research focuses on <strong>robotic manipulation and robot learning</strong>. I'm particularly interested in AI agents that plan and execute robotic tasks, reason about environmental feedback, and adapt their actions, as well as world models that support these agents by predicting the outcomes of physical interactions.</p>
     <div class="intro-links"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><a href="{{ '/CV/Xiyu_Ke_CV.pdf' | relative_url }}?v={{ site.time | date: '%s' }}">CV <span class="file-type">[PDF]</span></a></div>
   </div>
   {% assign portrait = site.static_files | where: 'path', site.data.profile.photo | first %}
